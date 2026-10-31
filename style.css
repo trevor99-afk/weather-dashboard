@@ -1,0 +1,77 @@
+:root {
+  --bg: #eef3fa;
+  --card: #fff;
+  --ink: #18263a;
+  --muted: #5f6f85;
+  --line: #d8e1ee;
+  --accent: #2563c9;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1623;
+    --card: #182233;
+    --ink: #e6edf7;
+    --muted: #94a5bb;
+    --line: #2a384f;
+    --accent: #7fb0ff;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; padding: 32px 16px 48px; }
+header { display: flex; justify-content: space-between; align-items: center; }
+h1 { margin: 0; font-size: 1.8rem; }
+h2 { margin: 0; font-size: 1.4rem; }
+input, button {
+  font: inherit;
+  color: inherit;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 14px;
+  min-width: 0;
+}
+button { cursor: pointer; }
+form { display: flex; gap: 8px; margin-top: 20px; }
+form input { flex: 1; }
+form button { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+@media (prefers-color-scheme: dark) { form button { color: #0f1623; } }
+.status { min-height: 24px; color: var(--muted); margin: 10px 0; }
+.current {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.current[hidden], .forecast[hidden] { display: none; }
+.current p { margin: 0; color: var(--muted); }
+.current .temp { color: var(--ink); font-size: 3.4rem; font-weight: 700; line-height: 1.2; }
+dl { margin: 0; display: grid; gap: 8px; min-width: 180px; }
+dl div { display: flex; justify-content: space-between; gap: 16px; }
+dt { color: var(--muted); }
+dd { margin: 0; font-weight: 600; }
+.forecast { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 12px; }
+.day {
+  padding: 14px 8px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.day p { margin: 0; }
+.day .icon { font-size: 1.6rem; }
+.day .low { color: var(--muted); }
+footer { margin-top: 28px; color: var(--muted); font-size: .85rem; text-align: center; }
+footer a { color: inherit; }
+@media (max-width: 540px) {
+  .forecast { grid-template-columns: repeat(2, 1fr); }
+}

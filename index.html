@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Weather</h1>
+      <button id="units" type="button" aria-label="Switch temperature units">°C</button>
+    </header>
+
+    <form id="search">
+      <input id="city" placeholder="Search for a city" autocomplete="off" required aria-label="City">
+      <button>Search</button>
+    </form>
+    <p id="status" class="status" role="status"></p>
+
+    <section id="current" class="current" hidden>
+      <div>
+        <h2 id="place"></h2>
+        <p id="condition"></p>
+        <p class="temp" id="temp"></p>
+      </div>
+      <dl>
+        <div><dt>Feels like</dt><dd id="feels"></dd></div>
+        <div><dt>Humidity</dt><dd id="humidity"></dd></div>
+        <div><dt>Wind</dt><dd id="wind"></dd></div>
+      </dl>
+    </section>
+
+    <section id="forecast" class="forecast" hidden></section>
+
+    <footer>Weather data by <a href="https://open-meteo.com/">Open-Meteo</a></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
